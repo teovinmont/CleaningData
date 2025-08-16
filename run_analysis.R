@@ -12,10 +12,27 @@
 #    activity and each subject.
 # ============================================================================ #
 
-#///////////////////////////////
+# LIBRARIES USED ----
+library(dplyr)
+library(readr)
+
 # DOWNLOAD AND IMPORT DATA ----
-#/////////////////////////////
+if (!file.exists("UCI HAE Dataset")) {
+        url <- "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
+        download.file(url, "Dataset.zip", method = 'auto')
+        unzip("Dataset.zip")
+}
 
-url <- "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
-download.file(url, "Dataset.zip", method = 'auto')
+# READ FILES ----
+activities <- read_table('UCI HAR Dataset/activity_labels.txt', col_names = c('code', 'activity'))
+features <- read_table('UCI HAR Dataset/features.txt', col_names = FALSE)
 
+# Training files ----
+subject_train <- read_table('UCI HAR Dataset/train/subject_train.txt', col_names = 'subject')
+X_train <- read_table('UCI HAR Dataset/train/X_train.txt', col_names = FALSE)
+y_train <- read_table('UCI HAR Dataset/train/y_train.txt', col_names = 'code')
+
+# Test files ----
+subject_test <- read_table('UCI HAR Dataset/test/subject_test.txt', col_names = 'subject')
+X_test <- read_table('UCI HAR Dataset/test/X_test.txt', col_names = FALSE)
+y_test <- read_table('UCI HAR Dataset/test/y_test.txt', col_names = 'code')
