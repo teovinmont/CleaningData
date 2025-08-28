@@ -82,8 +82,8 @@ united_dataset_clean <- united_dataset |>
         rename_with(~ tolower(str_replace(., 'acc', '_acceleration'))) |>
         rename_with(~ tolower(str_replace(., 'gyro', '_gyroscope')))
         
-# Resume
-united_resume <- united_dataset_clean |> 
+# Create a tidy summary
+tidy_means_by_subject_activity <- united_dataset_clean |> 
         group_by(subject, activity) |> 
         summarise(across(where(is.numeric), mean))
 
