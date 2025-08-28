@@ -87,6 +87,9 @@ tidy_means_by_subject_activity <- united_dataset_clean |>
         group_by(subject, activity) |> 
         summarise(across(where(is.numeric), mean))
 
+# Export file ----
+write.table(x = tidy_means_by_subject_activity,file = "tidy_means_by_subject_activity.txt", row.names = FALSE )
+
 
 
 

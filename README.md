@@ -1,11 +1,5 @@
 # CleaningData
 
-Here’s a clear and concise README description for your project in English, following best practices for open-source and data science repositories:
-
-------------------------------------------------------------------------
-
-# UCI HAR Dataset Cleaning and Tidying Project
-
 This project demonstrates the process of **cleaning** and **tidying** the *Human Activity Recognition Using Smartphones* (UCI HAR) dataset as part of the Coursera *Getting and Cleaning Data* course. The goal is to transform raw sensor data into a well-structured, human-readable format suitable for further analysis.
 
 ## Objectives
@@ -28,7 +22,7 @@ The original dataset comes from:
 ## Output Datasets
 
 -   **`united_dataset_clean`** – Cleaned dataset with descriptive variable names.
--   **`tidy_means_by_subject_activity`** – Final tidy dataset with the mean of each variable grouped by subject and activity.
+-   **`tidy_means_by_subject_activity.txt`** – Final tidy dataset with the mean of each variable grouped by subject and activity.
 
 ## Requirements
 
