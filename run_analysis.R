@@ -45,12 +45,10 @@ names(X_test) <- features_names
 # Select columns and identify groups
 
 X_train_selected <- X_train |> 
-        select(matches('std|mean')) |> 
-        mutate(group = 'Training', .before = 1)
+        select(matches('std|mean\b'))
 
 X_test_selected <- X_test |> 
-        select(matches('std|mean')) |> 
-        mutate(group = 'Test', .before = 1)
+        select(matches('std|mean\b'))
 
 
 # Unite training datasets ----
@@ -79,7 +77,6 @@ united_dataset_clean <- united_dataset |>
         rename_with(~ tolower(str_replace_all(., '-', '_'))) |> 
         rename_with(~ tolower(str_replace(., 'jerk', '_jerk'))) |> 
         rename_with(~ tolower(str_replace(., 'mag', '_mag'))) |> 
-        rename_with(~ tolower(str_replace(., 'freq', '_freq'))) |> 
         rename_with(~ tolower(str_replace(., '^t', 'time_'))) |> 
         rename_with(~ tolower(str_replace(., '^f', 'fourier_'))) |> 
         rename_with(~ tolower(str_replace(., 'acc', '_acceleration'))) |>
