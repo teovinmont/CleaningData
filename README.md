@@ -1,4 +1,5 @@
 # CleaningData
+
 This project demonstrates the process of **cleaning** and **tidying** the *Human Activity Recognition Using Smartphones* (UCI HAR) dataset as part of the Coursera *Getting and Cleaning Data* course. The goal is to transform raw sensor data into a well-structured, human-readable format suitable for further analysis.
 
 ## Objectives
